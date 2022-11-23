@@ -33,4 +33,6 @@ internal class TodoDatabase(databaseFactory: DatabaseDriverFactory) {
     fun setTaskPosition(id: Int, newPosition: Int) {
         dbQuery.setPositionById(id = id.toLong(), position = newPosition.toLong())
     }
+
+    fun getLastPosition(): Int = dbQuery.getLastPosition().executeAsOneOrNull()?.max?.toInt() ?: 0
 }

@@ -24,4 +24,6 @@ class TodoAppSDK(databaseDriverFactory: DatabaseDriverFactory) {
     suspend fun setTaskPosition(taskId: Int, newPosition: Int) =
         repository.setTaskPosition(taskId, newPosition)
 
+    suspend fun getLastPosition() = repository.getLastPosition()
+
 }

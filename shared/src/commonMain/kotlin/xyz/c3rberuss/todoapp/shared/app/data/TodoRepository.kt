@@ -11,4 +11,6 @@ internal class TodoRepository(private val tasksLocalDataSource: TasksLocalDataSo
 
     suspend fun setTaskPosition(taskId: Int, newPosition: Int) =
         tasksLocalDataSource.setTaskPosition(taskId, newPosition)
+
+    suspend fun getLastPosition() = tasksLocalDataSource.getLastPosition()
 }

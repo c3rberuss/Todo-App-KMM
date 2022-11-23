@@ -7,4 +7,5 @@ internal interface TasksLocalDataSource {
     suspend fun saveTask(task: Task)
     suspend fun deleteTask(taskId: Int)
     suspend fun setTaskPosition(taskId: Int, newPosition: Int)
+    suspend fun getLastPosition() : Int
 }

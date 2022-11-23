@@ -18,3 +18,6 @@ INSERT INTO TaskEntity(name, description, position, status) VALUES (?, ?, ?, ?);
 
 setPositionById:
 UPDATE TaskEntity SET position = ? WHERE id = ?;
+
+getLastPosition:
+SELECT max(position) FROM TaskEntity;
