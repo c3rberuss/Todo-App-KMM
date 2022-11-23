@@ -1,0 +1,20 @@
+CREATE TABLE TaskEntity(
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+
+  name TEXT NOT NULL,
+  description TEXT NOT NULL,
+  position INTEGER NOT NULL,
+  status TEXT AS xyz.c3rberuss.todoapp.shared.app.domain.TaskStatus NOT NULL
+);
+
+selectAllTask:
+SELECT * FROM TaskEntity ORDER BY position;
+
+deleteTaskById:
+DELETE FROM TaskEntity WHERE id = ?;
+
+saveTask:
+INSERT INTO TaskEntity(name, description, position, status) VALUES (?, ?, ?, ?);
+
+setPositionById:
+UPDATE TaskEntity SET position = ? WHERE id = ?;
