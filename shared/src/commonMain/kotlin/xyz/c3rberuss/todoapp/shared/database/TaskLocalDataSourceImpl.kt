@@ -24,6 +24,6 @@ internal class TaskLocalDataSourceImpl(private val todoDatabase: TodoDatabase) :
     }
 
     override suspend fun getLastPosition(): Int {
-        TODO("Not yet implemented")
+        return todoDatabase.getLastPosition()
     }
 }

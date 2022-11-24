@@ -30,8 +30,10 @@ kotlin {
 
         val commonMain by getting{
             dependencies{
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
                 implementation("io.github.aakira:napier:$napierVersion")
+                implementation("com.freeletics.flowredux:flowredux:1.0.2")
             }
         }
         val commonTest by getting {

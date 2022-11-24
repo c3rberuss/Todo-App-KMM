@@ -18,22 +18,32 @@ struct AddTaskView: View {
         VStack{
             
             TextField("Task name", text: $viewModel.taskName)
-                .padding(.all, 8)
-                .border(.gray)
-                .cornerRadius(16, antialiased: true)
-            TextField("Task description", text: $viewModel.taskDescription)
-                .padding(.all, 8)
-                .border(.gray)
-                .cornerRadius(16, antialiased: true)
+                .padding(.vertical)
+                .padding(.horizontal, 24)
+                .background(Color(UIColor.systemGray6))
+                .clipShape(Capsule(style: .continuous))
             
-            Spacer()
-            Button("Add task"){
+            TextField("Task description", text: $viewModel.taskDescription)
+                .padding(.vertical)
+                .padding(.horizontal, 24)
+                .background(Color(UIColor.systemGray6))
+                .clipShape(Capsule(style: .continuous))
+            
+        
+            
+            Button("Add task") {
                 
                 let task = Task(id: 0, name: viewModel.taskName, description: viewModel.taskDescription, status: .pending, position: 1)
                 viewModel.saveTask(task: task)
                 
                 self.mode.wrappedValue.dismiss()
             }
+            .padding(.vertical)
+            .padding(.horizontal, 24)
+            .background(Color(UIColor.systemBlue))
+            .clipShape(Capsule(style: .continuous))
+            .foregroundColor(Color(UIColor.white))
+            
             Spacer()
             
         }

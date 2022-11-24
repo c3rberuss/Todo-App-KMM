@@ -2,7 +2,7 @@ package xyz.c3rberuss.todoapp.shared.app.data
 
 import xyz.c3rberuss.todoapp.shared.app.domain.Task
 
-internal interface TasksLocalDataSource {
+interface TasksLocalDataSource {
     suspend fun getAllTasks(): List<Task>
     suspend fun saveTask(task: Task)
     suspend fun deleteTask(taskId: Int)
